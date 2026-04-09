@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -35,9 +35,12 @@
         h1,
         h2,
         h3,
-        h4,
-        .logo {
+        h4 {
             font-family: 'Outfit', sans-serif;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         html {
@@ -90,12 +93,57 @@
         }
 
         .logo {
-            font-size: 1.7rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.2));
+            text-transform: uppercase;
+        }
+
+        .logo b {
+            font-weight: 700;
+            background: linear-gradient(135deg, #22d3ee, #6366f1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            font-weight: 300;
+            color: #cbd5e1;
+            letter-spacing: 4px;
+            transition: all 0.4s ease;
+            opacity: 1 !important; /* Force visibility */
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+            filter: drop-shadow(0 0 15px rgba(34, 211, 238, 0.4));
+        }
+
+        .logo:hover span {
+            color: #fff;
+            letter-spacing: 6px;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(to right, #22d3ee, #6366f1);
+            transition: width 0.4s ease;
+            border-radius: 2px;
+        }
+
+        .logo:hover::after {
+            width: 100%;
         }
 
         .nav-links {
@@ -894,7 +942,7 @@
 
 <body>
     <nav class="nav" id="navbar">
-        <div class="logo">BALA<span>MANIKANDAN</span></div>
+        <div class="logo"><b>BALA</b><span>MANIKANDAN</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -912,8 +960,9 @@
                 <h3>Hello, I'm</h3>
                 <h1>Balamanikandan</h1>
                 <h2>MCA Graduate & Full Stack Developer</h2>
-                <p>Passionate about creating innovative digital solutions with cutting-edge technologies. Specialized in building scalable applications that make a difference.</p>
-                
+                <p>Passionate about creating innovative digital solutions with cutting-edge technologies. Specialized in
+                    building scalable applications that make a difference.</p>
+
                 <div class="hero-socials" style="margin-bottom: 2rem; margin-top: 1.5rem;">
                     <a href="#" class="hero-social-btn"><i class="fab fa-github"></i></a>
                     <a href="#" class="hero-social-btn"><i class="fab fa-linkedin"></i></a>
@@ -924,7 +973,8 @@
                     <a href="#projects" class="btn-hero" style="padding: 0.8rem 1.8rem; font-size: 0.95rem;">
                         View My Work <i class="fas fa-arrow-right"></i>
                     </a>
-                    <button class="btn-hero" onclick="openIntroVideo()" style="padding: 0.8rem 1.8rem; font-size: 0.95rem;">
+                    <button class="btn-hero" onclick="openIntroVideo()"
+                        style="padding: 0.8rem 1.8rem; font-size: 0.95rem;">
                         <i class="fas fa-play-circle"></i> Watch Intro
                     </button>
                     <a href="#contact" class="btn-hero" style="padding: 0.8rem 1.8rem; font-size: 0.95rem;">
@@ -935,7 +985,8 @@
 
             <div class="hero-image reveal">
                 <div class="profile-container">
-                    <div class="profile-bg-glow" style="background: radial-gradient(circle, #22d3ee 0%, transparent 70%); opacity: 0.3;"></div>
+                    <div class="profile-bg-glow"
+                        style="background: radial-gradient(circle, #22d3ee 0%, transparent 70%); opacity: 0.3;"></div>
                     <img src="BALAMANIKANDAN.jpg" alt="Balamanikandan" class="profile-img">
                 </div>
             </div>
@@ -955,16 +1006,24 @@
             <h2>About <span>Me</span></h2>
             <p>Get to know me better</p>
         </div>
-        
-        <div style="display: flex; flex-direction: column; gap: 2.5rem; align-items: center; max-width: 1100px; margin: 0 auto;">
+
+        <div
+            style="display: flex; flex-direction: column; gap: 2.5rem; align-items: center; max-width: 1100px; margin: 0 auto;">
             <!-- Introduction Card -->
             <div class="bento-card reveal" style="width: 100%; border-color: rgba(6, 182, 212, 0.2);">
-                <h3 style="color: #00d9ff; font-size: 2rem; margin-bottom: 2rem; justify-content: center; font-weight: 700;">Balamanikandan - MCA Graduate</h3>
+                <h3
+                    style="color: #00d9ff; font-size: 2rem; margin-bottom: 2rem; justify-content: center; font-weight: 700;">
+                    Balamanikandan - MCA Graduate</h3>
                 <p style="color: var(--text-dim); line-height: 1.8; font-size: 1.15rem; text-align: left;">
-                    I'm a Master of Computer Applications (MCA) graduate with a strong foundation in computer science and software development. Throughout my academic journey, I've developed expertise in multiple programming languages, frameworks, and technologies. I'm driven by the challenge of solving complex problems and creating efficient, user-friendly applications. My goal is to leverage my skills in full-stack development to build innovative solutions that positively impact users and businesses alike.
+                    I'm a Master of Computer Applications (MCA) graduate with a strong foundation in computer science
+                    and software development. Throughout my academic journey, I've developed expertise in multiple
+                    programming languages, frameworks, and technologies. I'm driven by the challenge of solving complex
+                    problems and creating efficient, user-friendly applications. My goal is to leverage my skills in
+                    full-stack development to build innovative solutions that positively impact users and businesses
+                    alike.
                 </p>
             </div>
-            
+
 
         </div>
     </section>
@@ -984,7 +1043,8 @@
                 <div class="project-info">
                     <div class="tag">Enterprise Solution</div>
                     <h3>Ticket Management System</h3>
-                    <p>A sophisticated Ticket Management System built to streamline support requests, optimize issue tracking, and provide real-time status updates.</p>
+                    <p>A sophisticated Ticket Management System built to streamline support requests, optimize issue
+                        tracking, and provide real-time status updates.</p>
                     <div class="project-tags">
                         <span class="tag">Node.js</span>
                         <span class="tag">MongoDB</span>
@@ -1015,7 +1075,7 @@
                         <span class="tag">CSS Grid</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/BALAMANIKANDAN020/Weather-Forecast-App/blob/main/index.html"><i
+                        <a href="https://github.com/BALAMANIKANDAN020/Weather-Forecast-App"><i
                                 class="fab fa-github"></i> Source</a>
                         <a href="https://balamanikandan020.github.io/Weather-Forecast-App/"><i
                                 class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -1040,7 +1100,8 @@
                         <span class="tag">Local Storage</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/BALAMANIKANDAN020/TODO-LIST/blob/main/index.html"><i class="fab fa-github"></i>
+                        <a href="https://github.com/BALAMANIKANDAN020/TODO-LIST/blob/main/index.html"><i
+                                class="fab fa-github"></i>
                             Source</a>
                         <a href="https://balamanikandan020.github.io/TODO-LIST/"><i
                                 class="fas fa-external-link-alt"></i> Live Demo</a>
@@ -1065,8 +1126,10 @@
                         <span class="tag">Tilt.js</span>
                     </div>
                     <div class="project-links">
-                        <a href="#"><i class="fab fa-github"></i> Source</a>
-                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/BALAMANIKANDAN020/MY-PORTFOLIO/blob/main/index.html"><i
+                                class="fab fa-github"></i> Source</a>
+                        <a href="https://balamanikandan020.github.io/MY-PORTFOLIO/"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </div>
             </div>
@@ -1132,7 +1195,8 @@
                 <h2>My Resume</h2>
                 <p>Interested in working with me? Download my detailed professional resume for an in-depth look at my
                     qualifications and experience.</p>
-                <a href="BALAMANIKANDAN - RESUME.pdf" download="Balamanikandan_Resume.pdf" class="btn-hero" style="margin-top: 2rem;">
+                <a href="BALAMANIKANDAN - RESUME.pdf" download="Balamanikandan_Resume.pdf" class="btn-hero"
+                    style="margin-top: 2rem;">
                     <i class="fas fa-download"></i> Download PDF
                 </a>
             </div>
